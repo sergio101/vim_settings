@@ -15,6 +15,7 @@ Bundle 'FuzzyFinder'
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'https://github.com/vim-scripts/blockquote.vim.git'
 Bundle 'https://github.com/vim-scripts/EasyMotion.git'
+Bundle 'https://github.com/tpope/vim-commentary.git'
 
 runtime! autoload/pathogen.vim
 if exists('g:loaded_pathogen')
@@ -28,6 +29,9 @@ filetype plugin indent on
 "  "  General
 "  ---------------------------------------------------------------------------
 
+" Add coloring for easymotion..
+hi link EasyMotionTarget ErrorMsg
+hi link EasyMotionShade  Comment
 
 let mapleader = ","
 let g:mapleader = ","
