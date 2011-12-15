@@ -1,5 +1,6 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
+filetype plugin indent on     " required! 
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -10,13 +11,10 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
-
 Bundle 'L9'
 Bundle 'FuzzyFinder'
-
 Bundle 'git://git.wincent.com/command-t.git'
-
-filetype plugin indent on     " required! 
+Bundle 'https://github.com/vim-scripts/blockquote.vim.git'
 
 runtime! autoload/pathogen.vim
 if exists('g:loaded_pathogen')
@@ -25,12 +23,6 @@ endif
 
 syntax on
 filetype plugin indent on
-
-"  ---------------------------------------------------------------------------
-"  Status line 
-"  ---------------------------------------------------------------------------
-
-set statusline+=\ %{fugitive#statusline()}
 
 "  ---------------------------------------------------------------------------
 "  "  General
@@ -87,7 +79,7 @@ let Tlist_WinWidth = 60
 set complete=.,w,b,u,t,i
 
 "find buffer
-nmap <silent> <leader>B :FufBuffer<CR>
+nmap <silent> <leader>b :FufBuffer<CR>
 
 " Settings for Ruby/Rails
 map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
