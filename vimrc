@@ -5,16 +5,27 @@ endif
 
 syntax on
 filetype plugin indent on
-"  
+
+"  ---------------------------------------------------------------------------
+"  Status line 
+"  ---------------------------------------------------------------------------
+
+set statusline+=\ %{fugitive#statusline()}
+
 "  ---------------------------------------------------------------------------
 "  "  General
-"  "
 "  ---------------------------------------------------------------------------
-"
+
+
 let mapleader = ","
 let g:mapleader = ","
 
 set cursorline
+set ruler
+set ttyfast
+
+" save buffer when switching out of it
+set autowrite
 
 " quickly switch between buffers
 nnoremap <leader><leader> <c-^>
@@ -56,7 +67,7 @@ let Tlist_WinWidth = 60
 set complete=.,w,b,u,t,i
 
 "find buffer
-nmap <silent> <leader>b :FufBuffer<CR>
+nmap <silent> <leader>B :FufBuffer<CR>
 
 " Settings for Ruby/Rails
 map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
