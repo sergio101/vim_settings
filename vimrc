@@ -5,7 +5,6 @@ filetype plugin indent on     " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -26,7 +25,7 @@ syntax on
 filetype plugin indent on
 
 "  ---------------------------------------------------------------------------
-"  "  General
+"    General
 "  ---------------------------------------------------------------------------
 
 " Add coloring for easymotion..
