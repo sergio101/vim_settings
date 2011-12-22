@@ -5,6 +5,7 @@ filetype plugin indent on     " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+Bundle "git://github.com/scrooloose/syntastic.git"
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -109,8 +110,8 @@ set visualbell
 set guifont=Monaco:h16
 set guioptions-=T guioptions-=e guioptions-=L guioptions-=r
 set shell=bash
-set number
 set relativenumber
+set number
 set ignorecase
 set nowrap
 
