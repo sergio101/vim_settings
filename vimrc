@@ -8,7 +8,7 @@ call vundle#rc()
 Bundle "git://github.com/scrooloose/syntastic.git"
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'rstacruz/sparkup'
 Bundle 'tpope/vim-rails.git'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
@@ -16,6 +16,7 @@ Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'https://github.com/vim-scripts/blockquote.vim.git'
 Bundle 'https://github.com/vim-scripts/EasyMotion.git'
 Bundle 'https://github.com/tpope/vim-commentary.git'
+Bundle 'https://github.com/vim-scripts/cake.vim.git'
 
 runtime! autoload/pathogen.vim
 if exists('g:loaded_pathogen')
