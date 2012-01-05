@@ -1,2 +1,4 @@
 bundle/*
 .DS_Store
+ftplugin/html/sparkup.py
+ftplugin/html/sparkup.vim

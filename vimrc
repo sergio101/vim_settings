@@ -8,7 +8,6 @@ call vundle#rc()
 Bundle "git://github.com/scrooloose/syntastic.git"
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
-Bundle 'rstacruz/sparkup'
 Bundle 'tpope/vim-rails.git'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
@@ -17,7 +16,8 @@ Bundle 'https://github.com/vim-scripts/blockquote.vim.git'
 Bundle 'https://github.com/vim-scripts/EasyMotion.git'
 Bundle 'https://github.com/tpope/vim-commentary.git'
 Bundle 'https://github.com/vim-scripts/cake.vim.git'
-
+Bundle 'https://github.com/vim-scripts/taglist.vim.git'
+Bundle "git://github.com/sophacles/vim-bundle-sparkup.git"
 
 runtime! autoload/pathogen.vim
 if exists('g:loaded_pathogen')
@@ -41,6 +41,9 @@ let g:mapleader = ","
 set cursorline
 set ruler
 set ttyfast
+
+" turn off tabs
+set nolist
 
 " save buffer when switching out of it
 set autowrite
@@ -86,6 +89,7 @@ set complete=.,w,b,u,t,i
 
 "find buffer
 nmap <silent> <leader>b :FufBuffer<CR>
+
 
 " Settings for Ruby/Rails
 map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
