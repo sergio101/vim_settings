@@ -25,11 +25,20 @@ if exists('g:loaded_pathogen')
 endif
 
 syntax on
-filetype plugin indent on
 
 "  ---------------------------------------------------------------------------
 "    General
 "  ---------------------------------------------------------------------------
+
+
+set relativenumber
+
+let mapleader = ","
+let g:mapleader = ","
+
+set cursorline
+set ruler
+set ttyfast
 
 " Set up auto pairing
 
@@ -84,12 +93,6 @@ vnoremap ]  <ESC>`>a]<ESC>`<i[<ESC>
 hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade  Comment
 
-let mapleader = ","
-let g:mapleader = ","
-
-set cursorline
-set ruler
-set ttyfast
 
 " turn off tabs
 set nolist
@@ -165,7 +168,7 @@ set visualbell
 set guifont=Monaco:h16
 set guioptions-=T guioptions-=e guioptions-=L guioptions-=r
 set shell=bash
-set relativenumber
+
 set number
 set ignorecase
 set nowrap
