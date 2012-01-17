@@ -32,6 +32,7 @@ syntax on
 
 
 set relativenumber
+set tabstop=3
 
 let mapleader = ","
 let g:mapleader = ","
