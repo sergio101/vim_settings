@@ -30,9 +30,14 @@ syntax on
 "    General
 "  ---------------------------------------------------------------------------
 
+" Setup tabs
 
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+
+"
 set relativenumber
-set tabstop=3
 
 let mapleader = ","
 let g:mapleader = ","
