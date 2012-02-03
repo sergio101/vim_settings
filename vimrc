@@ -29,14 +29,15 @@ syntax on
 "  ---------------------------------------------------------------------------
 "    General
 "  ---------------------------------------------------------------------------
-
+" PHP setup
+"
 " Setup tabs
 
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
-"
+"some sort of stuff
 set relativenumber
 
 let mapleader = ","
