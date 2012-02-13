@@ -18,6 +18,7 @@ Bundle 'https://github.com/tpope/vim-commentary.git'
 Bundle 'https://github.com/vim-scripts/cake.vim.git'
 Bundle 'https://github.com/vim-scripts/taglist.vim.git'
 Bundle "git://github.com/sophacles/vim-bundle-sparkup.git"
+Bundle "https://github.com/scrooloose/nerdtree.git"
 
 runtime! autoload/pathogen.vim
 if exists('g:loaded_pathogen')
