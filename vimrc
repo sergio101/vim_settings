@@ -18,6 +18,11 @@ Bundle 'https://github.com/tpope/vim-commentary.git'
 Bundle 'https://github.com/vim-scripts/cake.vim.git'
 Bundle 'https://github.com/vim-scripts/taglist.vim.git'
 Bundle "git://github.com/sophacles/vim-bundle-sparkup.git"
+Bundle 'https://github.com/tsaleh/vim-supertab.git'
+Bundle 'git://github.com/altercation/vim-colors-solarized.git'
+Bundle 'https://github.com/lukaszb/vim-web-indent.git'
+Bundle 'https://github.com/vim-scripts/php.vim-html-enhanced.git'
+
 
 runtime! autoload/pathogen.vim
 if exists('g:loaded_pathogen')
@@ -25,6 +30,8 @@ if exists('g:loaded_pathogen')
 endif
 
 syntax on
+set background=light
+colorscheme solarized
 
 "  ---------------------------------------------------------------------------
 "    General
@@ -47,54 +54,6 @@ set cursorline
 set ruler
 set ttyfast
 
-" Set up auto pairing
-
-inoremap ( ()<Left>
-inoremap [ []<Left>
-inoremap { {}<Left>
-autocmd Syntax html,vim inoremap < <lt>><Left>
-
-
-function! ClosePair(char)
-  if getline('.')[col('.') - 1] == a:char
-    return "\<Right>"
-  else
-    return a:char
-  endif
-endf
-
-
-inoremap ) <c-r>=ClosePair(')')<CR>
-inoremap ] <c-r>=ClosePair(']')<CR>
-inoremap } <c-r>=ClosePair('}')<CR>
-
-function! QuoteDelim(char)
-let line = getline('.')
-let col = col('.')
-if line[col - 2] == "\\"
-  "Inserting a quoted quotation mark into the string
-  return a:char
-  elseif line[col - 1] == a:char
-  "Escaping out of the string
-  return "\<Right>"
-else
-  "Starting a string
-  return a:char.a:char."\<Left>"
-  endif
-endf
-
-inoremap " <c-r>=QuoteDelim('"')<CR>
-inoremap ' <c-r>=QuoteDelim("'")<CR>
-
-vnoremap (  <ESC>`>a)<ESC>`<i(<ESC>
-vnoremap )  <ESC>`>a)<ESC>`<i(<ESC>
-vnoremap {  <ESC>`>a}<ESC>`<i{<ESC>
-vnoremap }  <ESC>`>a}<ESC>`<i{<ESC>
-vnoremap "  <ESC>`>a"<ESC>`<i"<ESC>
-vnoremap '  <ESC>`>a'<ESC>`<i'<ESC>
-vnoremap `  <ESC>`>a`<ESC>`<i`<ESC>
-vnoremap [  <ESC>`>a]<ESC>`<i[<ESC>
-vnoremap ]  <ESC>`>a]<ESC>`<i[<ESC>
 
 " Add coloring for easymotion..
 hi link EasyMotionTarget ErrorMsg
