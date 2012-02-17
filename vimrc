@@ -22,7 +22,7 @@ Bundle 'https://github.com/tsaleh/vim-supertab.git'
 Bundle 'git://github.com/altercation/vim-colors-solarized.git'
 Bundle 'https://github.com/lukaszb/vim-web-indent.git'
 Bundle 'https://github.com/vim-scripts/php.vim-html-enhanced.git'
-
+Bundle "https://github.com/scrooloose/nerdtree.git"
 
 runtime! autoload/pathogen.vim
 if exists('g:loaded_pathogen')
