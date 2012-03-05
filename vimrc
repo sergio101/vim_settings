@@ -1,5 +1,5 @@
 set nocompatible               " be iMproved
-filetype off                   " required!
+"filetype off                   " required!
 filetype plugin indent on     " required! 
 
 set rtp+=~/.vim/bundle/vundle/
@@ -23,6 +23,7 @@ Bundle 'git://github.com/altercation/vim-colors-solarized.git'
 Bundle 'https://github.com/lukaszb/vim-web-indent.git'
 Bundle 'https://github.com/vim-scripts/php.vim-html-enhanced.git'
 Bundle "https://github.com/scrooloose/nerdtree.git"
+Bundle 'https://github.com/ervandew/supertab.git'
 
 runtime! autoload/pathogen.vim
 if exists('g:loaded_pathogen')
