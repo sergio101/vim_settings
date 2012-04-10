@@ -18,12 +18,11 @@ Bundle 'https://github.com/tpope/vim-commentary.git'
 Bundle 'https://github.com/vim-scripts/cake.vim.git'
 Bundle 'https://github.com/vim-scripts/taglist.vim.git'
 Bundle "git://github.com/sophacles/vim-bundle-sparkup.git"
-Bundle 'https://github.com/tsaleh/vim-supertab.git'
-Bundle 'git://github.com/altercation/vim-colors-solarized.git'
 Bundle 'https://github.com/lukaszb/vim-web-indent.git'
 Bundle 'https://github.com/vim-scripts/php.vim-html-enhanced.git'
 Bundle "https://github.com/scrooloose/nerdtree.git"
 Bundle 'https://github.com/ervandew/supertab.git'
+Bundle 'git://github.com/scrooloose/nerdcommenter.git'
 
 runtime! autoload/pathogen.vim
 if exists('g:loaded_pathogen')
@@ -34,6 +33,7 @@ syntax on
 set background=light
 colorscheme solarized
 let php_folding = 1
+
 "  ---------------------------------------------------------------------------
 "    General
 "  ---------------------------------------------------------------------------
