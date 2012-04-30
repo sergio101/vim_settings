@@ -11,7 +11,6 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails.git'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
-Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'https://github.com/vim-scripts/blockquote.vim.git'
 Bundle 'https://github.com/vim-scripts/EasyMotion.git'
 Bundle 'https://github.com/tpope/vim-commentary.git'
@@ -24,6 +23,9 @@ Bundle "https://github.com/scrooloose/nerdtree.git"
 Bundle 'https://github.com/ervandew/supertab.git'
 Bundle 'git://github.com/scrooloose/nerdcommenter.git'
 Bundle 'https://github.com/altercation/vim-colors-solarized.git'
+Bundle 'git://github.com/spf13/PIV.git'
+Bundle 'git://github.com/kien/ctrlp.vim.git'
+Bundle 'https://github.com/Shougo/neocomplcache.git'
 
 runtime! autoload/pathogen.vim
 if exists('g:loaded_pathogen')
@@ -31,14 +33,15 @@ if exists('g:loaded_pathogen')
 endif
 
 syntax on
-set background=light
-colorscheme solarized
-let php_folding = 1
 
 "  ---------------------------------------------------------------------------
 "    General
 "  ---------------------------------------------------------------------------
 " PHP setup
+"
+" Enable neocomplcache
+let g:neocomplcache_enable_at_startup = 1
+
 "
 " Setup tabs
 
@@ -61,6 +64,13 @@ set ttyfast
 hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade  Comment
 
+"set fugitive links
+nnoremap <silent> <leader>gs :Gstatus<CR>
+nnoremap <silent> <leader>gd :Gdiff<CR>
+nnoremap <silent> <leader>gc :Gcommit<CR>
+nnoremap <silent> <leader>gb :Gblame<CR>
+nnoremap <silent> <leader>gl :Glog<CR>
+nnoremap <silent> <leader>gp :Git push<CR>
 
 " turn off tabs
 set nolist
@@ -104,6 +114,7 @@ set tags+=gems.tags
 map <leader>l :TlistToggle <cr>
 let Tlist_Use_Right_Window = 1
 let Tlist_WinWidth = 60
+"
 "autocomplete
 set complete=.,w,b,u,t,i
 
@@ -111,21 +122,11 @@ set complete=.,w,b,u,t,i
 nmap <silent> <leader>b :FufBuffer<CR>
 
 
-" Settings for Ruby/Rails
-map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
-map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
-map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
-map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
-map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
-map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
-map <leader>gs :CommandTFlush<cr>\|:CommandT public/stylesheets<cr>
-map <leader>ga :CommandTFlush<cr>\|:CommandT app/assets<cr>
-
 " View routes or Gemfile in large split
 map <leader>gr :topleft :split config/routes.rb<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
-"
-" " Skip to Model, View or Controller
+
+" Skip to Model, View or Controller
 map <Leader>m :Rmodel 
 map <Leader>v :Rview 
 map <Leader>c :Rcontroller 
