@@ -37,8 +37,28 @@ syntax on
 "  ---------------------------------------------------------------------------
 "    General
 "  ---------------------------------------------------------------------------
-" PHP setup
-"
+
+" Set up syntastic
+let g:syntastic_echo_current_error=1
+let g:syntastic_enable_signs=1
+let g:syntastic_enable_highlighting = 1
+let g:syntastic_auto_loc_list=2
+
+" Set up status line
+set laststatus=2
+
+" Broken down into easily includeable segments
+set statusline=%<%f\    " Filename
+set statusline+=%w%h%m%r " Options
+set statusline+=%{fugitive#statusline()} "  Git Hotness
+set statusline+=\ [%{&ff}/%Y]            " filetype
+set statusline+=\ [%{getcwd()}]          " current dir
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+
 " Enable neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 
