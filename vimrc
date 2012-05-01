@@ -33,6 +33,8 @@ if exists('g:loaded_pathogen')
 endif
 
 syntax on
+set background=light
+colorscheme solarized
 
 "  ---------------------------------------------------------------------------
 "    General
