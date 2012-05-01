@@ -36,6 +36,8 @@ syntax on
 set background=light
 colorscheme solarized
 
+au BufNewFile,BufRead *.ldg,*.ledger setf ledger | comp ledger
+
 "  ---------------------------------------------------------------------------
 "    General
 "  ---------------------------------------------------------------------------
@@ -86,7 +88,7 @@ set ttyfast
 hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade  Comment
 
-"set fugitive links
+"set fuadded solarized back into the mixgitive links
 nnoremap <silent> <leader>gs :Gstatus<CR>
 nnoremap <silent> <leader>gd :Gdiff<CR>
 nnoremap <silent> <leader>gc :Gcommit<CR>
