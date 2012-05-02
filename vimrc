@@ -46,7 +46,8 @@ au BufNewFile,BufRead *.ldg,*.ledger setf ledger | comp ledger
 let g:syntastic_echo_current_error=1
 let g:syntastic_enable_signs=1
 let g:syntastic_enable_highlighting = 1
-let g:syntastic_auto_loc_list=2
+let g:syntastic_auto_loc_list=1
+let g:syntastic_auto_jump=1
 
 " Set up status line
 set laststatus=2
@@ -158,7 +159,7 @@ au BufRead,BufNewFile Gemfile,Rakefile,Thorfile,config.ru,Vagrantfile,Guardfile,
 
 
 set visualbell
-set guifont=Monaco:h16
+set guifont=Monaco:h12
 set guioptions-=T guioptions-=e guioptions-=L guioptions-=r
 set shell=bash
 
