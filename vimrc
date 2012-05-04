@@ -33,8 +33,6 @@ if exists('g:loaded_pathogen')
 endif
 
 syntax on
-set background=light
-colorscheme solarized
 
 au BufNewFile,BufRead *.ldg,*.ledger setf ledger | comp ledger
 
