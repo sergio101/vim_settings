@@ -27,6 +27,7 @@ Bundle 'https://github.com/altercation/vim-colors-solarized.git'
 Bundle 'git://github.com/spf13/PIV.git'
 Bundle 'git://github.com/kien/ctrlp.vim.git'
 Bundle 'https://github.com/Shougo/neocomplcache.git'
+Bundle 'git://github.com/vim-scripts/TwitVim.git'
 
 runtime! autoload/pathogen.vim
 if exists('g:loaded_pathogen')
@@ -83,6 +84,7 @@ set cursorline
 set ruler
 set ttyfast
 
+" set up twitter mode
 
 " Add coloring for easymotion..
 hi link EasyMotionTarget ErrorMsg
