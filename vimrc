@@ -1,5 +1,6 @@
 set nocompatible               " be iMproved
 "filetype off                   " required!
+call pathogen#infect()
 filetype plugin indent on     " required! 
 
 set rtp+=~/.vim/bundle/vundle/
@@ -28,6 +29,8 @@ Bundle 'git://github.com/spf13/PIV.git'
 Bundle 'git://github.com/kien/ctrlp.vim.git'
 Bundle 'https://github.com/Shougo/neocomplcache.git'
 Bundle 'git://github.com/vim-scripts/TwitVim.git'
+Bundle 'https://github.com/kchmck/vim-coffee-script.git'
+Bundle 'git://github.com/majutsushi/tagbar.git'
 
 runtime! autoload/pathogen.vim
 if exists('g:loaded_pathogen')
@@ -35,6 +38,12 @@ if exists('g:loaded_pathogen')
 endif
 
 syntax on
+
+if has('gui_running')
+syntax enable
+set background=light
+colorscheme solarized
+endif
 
 au BufNewFile,BufRead *.ldg,*.ledger setf ledger | comp ledger
 
@@ -90,7 +99,7 @@ set ttyfast
 hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade  Comment
 
-"set fuadded solarized back into the mixgitive links
+"set fugitve into the mixgitive links
 nnoremap <silent> <leader>gs :Gstatus<CR>
 nnoremap <silent> <leader>gd :Gdiff<CR>
 nnoremap <silent> <leader>gc :Gcommit<CR>
@@ -115,6 +124,9 @@ map === mmgg=G`m^zz
 
 "close buffer
 nmap <leader>d :bd<CR>
+
+" Toggle taglist
+nmap jb  :TagbarToggle<CR>
 
 " close all buffers
 nmap <leader>D :bufdo bd<CR>
@@ -160,7 +172,7 @@ au BufRead,BufNewFile Gemfile,Rakefile,Thorfile,config.ru,Vagrantfile,Guardfile,
 
 
 set visualbell
-set guifont=Monaco:h12
+set guifont=Source\ Code\ Pro:h14
 set guioptions-=T guioptions-=e guioptions-=L guioptions-=r
 set shell=bash
 
