@@ -126,7 +126,7 @@ map === mmgg=G`m^zz
 nmap <leader>d :bd<CR>
 
 " Toggle taglist
-nmap jb  :TagbarToggle<CR>
+nmap <F8> :TagbarToggle<CR>
 
 " close all buffers
 nmap <leader>D :bufdo bd<CR>
@@ -168,7 +168,8 @@ map <leader>gg :topleft 100 :split Gemfile<cr>
 map <Leader>m :Rmodel 
 map <Leader>v :Rview 
 map <Leader>c :Rcontroller 
-au BufRead,BufNewFile Gemfile,Rakefile,Thorfile,config.ru,Vagrantfile,Guardfile,Capfile set ft=ruby
+au BufRead,BufNewFile
+au BufRead, BufNewFile Gemfile,Rakefile,Thorfile,config.ru,Vagrantfile,Guardfile,Capfile set ft=ruby
 
 
 set visualbell
@@ -188,3 +189,23 @@ augroup END
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
 endif
+
+" Execute open rspec buffer
+" Thanks to Ian Smith-Heisters
+function! RunSpec(args)
+ if exists("b:rails_root") && filereadable(b:rails_root . "")
+   let spec = b:rails_root . "/script/spec"
+ else
+   let spec = "bundle exec rspec spec"
+ end 
+ let cmd = ":! " . spec . " % -cfn " . a:args
+ execute cmd 
+endfunction
+ 
+" Mappings
+" run one rspec example or describe block based on cursor position
+map !s :call RunSpec("-l " . <C-r>=line('.')<CR>)
+" run full rspec file
+map !S :call RunSpec("")
+
+
