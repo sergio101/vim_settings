@@ -31,6 +31,9 @@ Bundle 'https://github.com/Shougo/neocomplcache.git'
 Bundle 'git://github.com/vim-scripts/TwitVim.git'
 Bundle 'https://github.com/kchmck/vim-coffee-script.git'
 Bundle 'git://github.com/majutsushi/tagbar.git'
+Bundle 'git://github.com/vim-scripts/EasyGrep.git'
+Bundle 'git://github.com/tpope/vim-markdown.git'
+Bundle 'git://github.com/janx/vim-rubytest.git'
 
 runtime! autoload/pathogen.vim
 if exists('g:loaded_pathogen')
@@ -40,9 +43,9 @@ endif
 syntax on
 
 if has('gui_running')
-syntax enable
-set background=light
-colorscheme solarized
+  syntax enable
+  set background=light
+  colorscheme solarized
 endif
 
 au BufNewFile,BufRead *.ldg,*.ledger setf ledger | comp ledger
@@ -149,7 +152,7 @@ map <leader>p :NERDTreeToggle<cr>
 "tags
 set tags=./tags;
 set tags+=gems.tags
-map <leader>l :TlistToggle <cr>
+map <leader>L :TlistToggle <cr>
 let Tlist_Use_Right_Window = 1
 let Tlist_WinWidth = 60
 "
@@ -172,6 +175,10 @@ au BufRead,BufNewFile
 au BufRead, BufNewFile Gemfile,Rakefile,Thorfile,config.ru,Vagrantfile,Guardfile,Capfile set ft=ruby
 
 
+" Set up Rails Test
+
+" let g:rubytest_in_quickfix = 1
+
 set visualbell
 set guifont=Source\ Code\ Pro:h14
 set guioptions-=T guioptions-=e guioptions-=L guioptions-=r
@@ -189,23 +196,5 @@ augroup END
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
 endif
-
-" Execute open rspec buffer
-" Thanks to Ian Smith-Heisters
-function! RunSpec(args)
- if exists("b:rails_root") && filereadable(b:rails_root . "")
-   let spec = b:rails_root . "/script/spec"
- else
-   let spec = "bundle exec rspec spec"
- end 
- let cmd = ":! " . spec . " % -cfn " . a:args
- execute cmd 
-endfunction
- 
-" Mappings
-" run one rspec example or describe block based on cursor position
-map !s :call RunSpec("-l " . <C-r>=line('.')<CR>)
-" run full rspec file
-map !S :call RunSpec("")
 
 
