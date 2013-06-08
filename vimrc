@@ -27,6 +27,7 @@ Bundle 'https://github.com/altercation/vim-colors-solarized.git'
 Bundle 'git://github.com/spf13/PIV.git'
 Bundle 'git://github.com/kien/ctrlp.vim.git'
 Bundle 'https://github.com/Shougo/neocomplcache.git'
+Bundle 'https://github.com/janx/vim-rubytest.git'
 
 runtime! autoload/pathogen.vim
 if exists('g:loaded_pathogen')
@@ -135,7 +136,7 @@ map <leader>p :NERDTreeToggle<cr>
 "tags
 set tags=./tags;
 set tags+=gems.tags
-map <leader>l :TlistToggle <cr>
+map <leader>L :TlistToggle <cr>
 let Tlist_Use_Right_Window = 1
 let Tlist_WinWidth = 60
 "
@@ -144,7 +145,6 @@ set complete=.,w,b,u,t,i
 
 "find buffer
 nmap <silent> <leader>b :FufBuffer<CR>
-
 
 " View routes or Gemfile in large split
 map <leader>gr :topleft :split config/routes.rb<cr>
