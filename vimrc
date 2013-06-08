@@ -1,5 +1,6 @@
 set nocompatible               " be iMproved
 "filetype off                   " required!
+call pathogen#infect()
 filetype plugin indent on     " required! 
 
 set rtp+=~/.vim/bundle/vundle/
@@ -28,6 +29,14 @@ Bundle 'git://github.com/spf13/PIV.git'
 Bundle 'git://github.com/kien/ctrlp.vim.git'
 Bundle 'https://github.com/Shougo/neocomplcache.git'
 Bundle 'https://github.com/janx/vim-rubytest.git'
+Bundle 'git://github.com/vim-scripts/TwitVim.git'
+Bundle 'https://github.com/kchmck/vim-coffee-script.git'
+Bundle 'git://github.com/majutsushi/tagbar.git'
+Bundle 'git://github.com/vim-scripts/EasyGrep.git'
+Bundle 'git://github.com/tpope/vim-markdown.git'
+Bundle 'git://github.com/janx/vim-rubytest.git'
+Bundle 'git://github.com/tpope/vim-surround.git'
+>>>>>>> fa3c3bc4d421b75763098a91e50f9c5f43bf31d6
 
 runtime! autoload/pathogen.vim
 if exists('g:loaded_pathogen')
@@ -35,6 +44,12 @@ if exists('g:loaded_pathogen')
 endif
 
 syntax on
+
+if has('gui_running')
+  syntax enable
+  set background=light
+  colorscheme solarized
+endif
 
 au BufNewFile,BufRead *.ldg,*.ledger setf ledger | comp ledger
 
@@ -84,12 +99,13 @@ set cursorline
 set ruler
 set ttyfast
 
+" set up twitter mode
 
 " Add coloring for easymotion..
 hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade  Comment
 
-"set fuadded solarized back into the mixgitive links
+"set fugitve into the mixgitive links
 nnoremap <silent> <leader>gs :Gstatus<CR>
 nnoremap <silent> <leader>gd :Gdiff<CR>
 nnoremap <silent> <leader>gc :Gcommit<CR>
@@ -114,6 +130,9 @@ map === mmgg=G`m^zz
 
 "close buffer
 nmap <leader>d :bd<CR>
+
+" Toggle taglist
+nmap <F8> :TagbarToggle<CR>
 
 " close all buffers
 nmap <leader>D :bufdo bd<CR>
@@ -154,11 +173,16 @@ map <leader>gg :topleft 100 :split Gemfile<cr>
 map <Leader>m :Rmodel 
 map <Leader>v :Rview 
 map <Leader>c :Rcontroller 
-au BufRead,BufNewFile Gemfile,Rakefile,Thorfile,config.ru,Vagrantfile,Guardfile,Capfile set ft=ruby
+au BufRead,BufNewFile
+au BufRead, BufNewFile Gemfile,Rakefile,Thorfile,config.ru,Vagrantfile,Guardfile,Capfile set ft=ruby
 
+
+" Set up Rails Test
+
+" let g:rubytest_in_quickfix = 1
 
 set visualbell
-set guifont=Monaco:h12
+set guifont=Source\ Code\ Pro:h14
 set guioptions-=T guioptions-=e guioptions-=L guioptions-=r
 set shell=bash
 
@@ -174,3 +198,5 @@ augroup END
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
 endif
+
+
