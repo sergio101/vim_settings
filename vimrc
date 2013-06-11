@@ -28,6 +28,7 @@ Bundle 'https://github.com/altercation/vim-colors-solarized.git'
 Bundle 'git://github.com/spf13/PIV.git'
 Bundle 'git://github.com/kien/ctrlp.vim.git'
 Bundle 'https://github.com/Shougo/neocomplcache.git'
+Bundle 'https://github.com/janx/vim-rubytest.git'
 Bundle 'git://github.com/vim-scripts/TwitVim.git'
 Bundle 'https://github.com/kchmck/vim-coffee-script.git'
 Bundle 'git://github.com/majutsushi/tagbar.git'
@@ -164,7 +165,6 @@ set complete=.,w,b,u,t,i
 
 "find buffer
 nmap <silent> <leader>b :FufBuffer<CR>
-
 
 " View routes or Gemfile in large split
 map <leader>gr :topleft :split config/routes.rb<cr>
