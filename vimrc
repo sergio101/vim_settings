@@ -34,10 +34,10 @@ Bundle 'https://github.com/kchmck/vim-coffee-script.git'
 Bundle 'git://github.com/majutsushi/tagbar.git'
 Bundle 'git://github.com/vim-scripts/EasyGrep.git'
 Bundle 'git://github.com/tpope/vim-markdown.git'
-Bundle 'git://github.com/janx/vim-rubytest.git'
 Bundle 'git://github.com/tpope/vim-surround.git'
 Bundle 'git://github.com/Shadowfiend/liftweb-vim.git'
 Bundle 'git://github.com/mattn/gist-vim.git'
+Bundle 'jgdavey/tslime.vim'
 
 runtime! autoload/pathogen.vim
 if exists('g:loaded_pathogen')
