@@ -28,8 +28,6 @@ Bundle 'https://github.com/altercation/vim-colors-solarized.git'
 Bundle 'git://github.com/spf13/PIV.git'
 Bundle 'git://github.com/kien/ctrlp.vim.git'
 Bundle 'https://github.com/Shougo/neocomplcache.git'
-Bundle 'https://github.com/janx/vim-rubytest.git'
-Bundle 'git://github.com/vim-scripts/TwitVim.git'
 Bundle 'https://github.com/kchmck/vim-coffee-script.git'
 Bundle 'git://github.com/majutsushi/tagbar.git'
 Bundle 'git://github.com/vim-scripts/EasyGrep.git'
@@ -38,6 +36,7 @@ Bundle 'git://github.com/tpope/vim-surround.git'
 Bundle 'git://github.com/Shadowfiend/liftweb-vim.git'
 Bundle 'git://github.com/mattn/gist-vim.git'
 Bundle 'jgdavey/tslime.vim'
+Bundle 'thoughtbot/vim-rspec'
 
 runtime! autoload/pathogen.vim
 if exists('g:loaded_pathogen')
@@ -52,7 +51,6 @@ if has('gui_running')
   colorscheme solarized
 endif
 
-au BufNewFile,BufRead *.ldg,*.ledger setf ledger | comp ledger
 
 "  ---------------------------------------------------------------------------
 "    General
@@ -90,17 +88,12 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
-"some sort of stuff
-set relativenumber
-
 let mapleader = ","
 let g:mapleader = ","
 
 set cursorline
 set ruler
 set ttyfast
-
-" set up twitter mode
 
 " Add coloring for easymotion..
 hi link EasyMotionTarget ErrorMsg
@@ -179,6 +172,11 @@ au BufRead, BufNewFile Gemfile,Rakefile,Thorfile,config.ru,Vagrantfile,Guardfile
 
 
 " Set up Rails Test
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>T :call RunAllSpecs()<CR>
 
 " let g:rubytest_in_quickfix = 1
 
