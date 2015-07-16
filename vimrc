@@ -153,9 +153,9 @@ map <leader>gr :topleft :split config/routes.rb<cr>
 map <leader>gg :topleft 100 :split Gemfile<cr>
 
 " Skip to Model, View or Controller
-map <Leader>m :Rmodel 
-map <Leader>v :Rview 
-map <Leader>c :Rcontroller 
+map <Leader>m :Emodel 
+map <Leader>v :Eview 
+map <Leader>c :Econtroller 
 
 " Set up Rails Test
 let g:rubytest_in_quickfix = 1
