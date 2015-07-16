@@ -1,25 +1,24 @@
 set nocompatible               " be iMproved
 "filetype off                   " required!
-syntax on
+call pathogen#infect()
+filetype plugin indent on     " required! 
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
-
-Plugin 'gmarik/Vundle.vim'
-
-Plugin 'tpope/vim-fugitive'
+"Bundle "git://github.com/scrooloose/syntastic.git"
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails.git'
-Plugin 'L9'
-Bundle 'Valloric/YouCompleteMe'
-Plugin 'git://git.wincent.com/command-t.git'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'AutoClose'
-Bundle 'https://github.com/vim-scripts/EasyMotion.git'
+"Bundle 'https://github.com/vim-scripts/blockquote.vim.git'
+"Bundle 'https://github.com/vim-scripts/EasyMotion.git'
+"Bundle 'https://github.com/tpope/vim-commentary.git'
 Bundle 'https://github.com/vim-scripts/taglist.vim.git'
 Bundle "git://github.com/sophacles/vim-bundle-sparkup.git"
+"Bundle 'https://github.com/lukaszb/vim-web-indent.git'
 Bundle 'https://github.com/vim-scripts/php.vim-html-enhanced.git'
 Bundle "https://github.com/scrooloose/nerdtree.git"
 Bundle 'https://github.com/ervandew/supertab.git'
@@ -30,13 +29,18 @@ Bundle 'https://github.com/Shougo/neocomplcache.git'
 Bundle 'https://github.com/kchmck/vim-coffee-script.git'
 Bundle 'git://github.com/majutsushi/tagbar.git'
 Bundle 'git://github.com/vim-scripts/EasyGrep.git'
+"Bundle 'git://github.com/tpope/vim-markdown.git'
 Bundle 'git://github.com/tpope/vim-surround.git'
+Bundle 'git://github.com/Shadowfiend/liftweb-vim.git'
 Bundle 'git://github.com/mattn/gist-vim.git'
+"Bundle 'jgdavey/tslime.vim'
 Bundle 'thoughtbot/vim-rspec'
-call vundle#end()            " required
 
-filetype plugin indent on    " required
 
+runtime! autoload/pathogen.vim
+if exists('g:loaded_pathogen')
+  call pathogen#runtime_prepend_subdirectories(expand('~/.vimbundles'))
+endif
 
 syntax on
 
@@ -45,6 +49,7 @@ if has('gui_running')
   set background=light
   colorscheme solarized
 endif
+
 
 "  ---------------------------------------------------------------------------
 "    General
@@ -59,6 +64,7 @@ endif
 
 " Set up status line
 set laststatus=2
+
 " Broken down into easily includeable segments
 set statusline=%<%f\    " Filename
 set statusline+=%w%h%m%r " Options
@@ -71,6 +77,10 @@ set statusline+=%*
 
 set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 
+" Enable neocomplcache
+" let g:neocomplcache_enable_at_startup = 1
+
+"
 " Setup tabs
 
 set tabstop=4
@@ -156,6 +166,9 @@ map <leader>gg :topleft 100 :split Gemfile<cr>
 map <Leader>m :Rmodel 
 map <Leader>v :Rview 
 map <Leader>c :Rcontroller 
+au BufRead,BufNewFile
+au BufRead, BufNewFile Gemfile,Rakefile,Thorfile,config.ru,Vagrantfile,Guardfile,Capfile set ft=ruby
+
 
 " Set up Rails Test
 let g:rubytest_in_quickfix = 1
@@ -173,4 +186,5 @@ set nolist
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
 endif
+
 
