@@ -32,6 +32,7 @@ Bundle 'git://github.com/majutsushi/tagbar.git'
 Bundle 'git://github.com/vim-scripts/EasyGrep.git'
 Bundle 'git://github.com/tpope/vim-surround.git'
 Bundle 'git://github.com/mattn/gist-vim.git'
+Bundle 'vim-ruby/vim-ruby'
 Bundle 'thoughtbot/vim-rspec'
 call vundle#end()            " required
 
@@ -169,6 +170,8 @@ set number
 set ignorecase
 set nowrap
 set nolist
+set incsearch
+set hlsearch
 
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
