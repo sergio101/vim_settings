@@ -34,6 +34,7 @@ Bundle 'git://github.com/tpope/vim-surround.git'
 Bundle 'git://github.com/mattn/gist-vim.git'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'thoughtbot/vim-rspec'
+Plugin 'mileszs/ack.vim'
 call vundle#end()            " required
 
 filetype plugin indent on    " required
@@ -116,7 +117,7 @@ map === mmgg=G`m^zz
 nmap <leader>d :bd<CR>
 
 " Toggle taglist
-nmap <F8> :TagbarToggle<CR>
+nmap <leader> l :TagbarToggle<CR>
 
 " close all buffers
 nmap <leader>D :bufdo bd<CR>
@@ -172,6 +173,8 @@ set nowrap
 set nolist
 set incsearch
 set hlsearch
+
+let g:ackprg = 'ag --nogroup --nocolor --column'
 
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
